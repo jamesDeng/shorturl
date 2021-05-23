@@ -57,19 +57,18 @@ mvn compile jib:dockerBuild
 
 ## System Design
 
-Character range： [0-9][a-z][A-B] 
+Basic description:
 
-Short Url Length: 8
+* Character range： [0-9][a-z][A-B] 
+* Short Url Length: 8
+* Short Url Total Size: 64^8
+* Single Redis supports Short Url Size： (2^32)/2
 
-Short Url Total Size: 64^8
+Design：
 
-Single Redis supports Short Url Size： 2^32/2
-
-生成算法：規則基於自增序列，將10進制序列轉換為62進制的數值。
-
-自增序列實現： Redis incr command (https://redis.io/commands/incr)
-
-Short url 映射數據存儲在 Redis 中，這樣可以輕鬆支撐 1W+ TPS，同時是這樣也帶來了數據丟失的風險
+* 生成算法：規則基於自增序列，將10進制序列轉換為62進制的數值。
+* 原子自增序列實現： Redis incr command (https://redis.io/commands/incr)
+* Short url 映射數據存儲在 Redis 中，這樣可以輕鬆支撐 1W+ TPS，同時是這樣也帶來了數據丟失的風險
 
 ###  High availability
 #### Redis

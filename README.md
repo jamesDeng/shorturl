@@ -20,7 +20,9 @@ git clone https://github.com/jamesDeng/shorturl.git
 
 cd shorturl
 
-docker-compose up
+docker-compose up & 
+
+
 ```
 
 New Url:
@@ -39,6 +41,11 @@ Reuslt example:
 Test short url:
 ``` shell
 curl -s -f -I -L http://127.0.0.1:8080/2q3Rktog
+```
+
+Stop:
+``` shell
+docker-compose stop
 ```
 
 ## Build

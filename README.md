@@ -27,7 +27,7 @@ New Url:
 ``` shell
 curl --location --request POST 'http://127.0.0.1:8080/newurl' \
 --header 'Content-Type: application/json' \
---data-raw '{
+--data '{
     "url": "https://www.google.com"
 }'
 

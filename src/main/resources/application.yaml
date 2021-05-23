@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev  #**部署运行环境，dev:开发，sit:测试，prod:生产
+  application:
+    name: shorturl
+  redis:
+    database: 0
+    host: ${REDIS_HOST:localhost}
+    port: 6379
+
+domain: http://127.0.0.1:8080

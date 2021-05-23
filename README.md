@@ -16,7 +16,7 @@ DB: Redis
 
 ## Running
 ```bash
-git clone 
+git clone https://github.com/jamesDeng/shorturl.git
 
 cd shorturl
 
